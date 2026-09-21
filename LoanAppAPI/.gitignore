@@ -1,0 +1,9 @@
+LoanApp.API/bin
+LoanApp.API/obj
+LoanApp.Application/bin
+LoanApp.Application/obj
+LoanApp.Domain/bin
+LoanApp.Domain/obj
+LoanApp.Infrastructure/bin
+LoanApp.Infrastructure/obj
+.vs/

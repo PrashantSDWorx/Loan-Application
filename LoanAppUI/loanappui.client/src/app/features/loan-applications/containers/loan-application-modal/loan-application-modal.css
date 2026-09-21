@@ -1,0 +1,25 @@
+:host {
+    display: block;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
+.form-control {
+    border-width: 3px !important;
+    border-radius: 0 !important;
+    box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.form-label {
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--bs-brutal-black) !important;
+}

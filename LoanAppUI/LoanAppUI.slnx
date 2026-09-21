@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="loanappui.client/loanappui.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="LoanAppUI.Server/LoanAppUI.Server.csproj" />
+</Solution>

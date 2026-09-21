@@ -1,0 +1,22 @@
+<section
+    class="snap-section d-flex flex-column flex-shrink-0 h-100 min-h-0 py-1 py-md-3 py-lg-5 container-lg overflow-y-auto">
+    <header class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-2 mb-lg-3">
+        <hgroup class="d-none d-md-inline">
+            <p class="mb-0 mb-lg-1 text-uppercase text-secondary small fw-semibold section-heading">{{sectionTitle()}}
+            </p>
+            <h2 class="h3 mb-0 section-subheading">{{sectionSubtitle()}}</h2>
+        </hgroup>
+        @if(enableScrollToTop()){
+        <button class="btn btn-sm btn-outline-primary mt-1 mt-lg-0" type="button" (click)="emitScrollEvent()">
+            <span class="font-resizing">
+                <i class="bi bi-arrow-up me-md-2" aria-hidden="true"></i>
+                Back to Top
+            </span>
+        </button>
+        }
+    </header>
+
+    <div class="row flex-grow-1 min-h-0">
+        <ng-content />
+    </div>
+</section>

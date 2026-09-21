@@ -1,0 +1,11 @@
+:host {
+    display: contents;
+}
+
+.section-heading {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+}
+
+.section-subheading {
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+}

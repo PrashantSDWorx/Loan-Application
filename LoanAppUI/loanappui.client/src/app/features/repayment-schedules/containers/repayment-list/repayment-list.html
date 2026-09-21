@@ -1,0 +1,67 @@
+<div class="auto-resizing card h-100 border border-3 border-dark overflow-hidden d-flex flex-column"
+  style="background-color: var(--bs-brutal-white); border-radius: 0; box-shadow: 6px 6px 0 var(--bs-brutal-black);">
+  <div class="card-header border-0 p-3"
+    style="background-color: var(--bs-brutal-primary); border-bottom: 3px solid var(--bs-brutal-black);">
+    <h3 class="section-heading h5 mb-0 text-dark">Repayment schedule</h3>
+  </div>
+
+  <div class="card-body p-3 pt-2 pb-2 flex-grow-1 d-flex flex-column" style="min-height: 0;">
+    <div class="d-flex justify-content-between align-items-center border-bottom border-1 border-dark pb-2 mb-3">
+      <div>
+        <div class="small text-uppercase fw-bold" style="letter-spacing: 0.08em; color: var(--bs-brutal-dark);">
+          Interest rate
+        </div>
+        <div class="fw-bold">{{ repaymentSchedule().interestRate }}%</div>
+      </div>
+
+      <div class="text-end">
+        <div class="small text-uppercase fw-bold" style="letter-spacing: 0.08em; color: var(--bs-brutal-dark);">
+          Monthly payment
+        </div>
+        <div class="fw-bold">{{ repaymentSchedule().monthlyRepayment | currency:'USD':'symbol':'1.0-0' }}</div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <span class="small text-uppercase fw-bold"
+        style="letter-spacing: 0.08em; color: var(--bs-brutal-dark);">Installments</span>
+      <span class="small text-dark fw-bold">
+        Total: {{ repaymentSchedule().totalRepayment | currency:'USD':'symbol':'1.0-0' }}
+      </span>
+    </div>
+
+    <div class="scrollable-installments flex-grow-1 overflow-y-auto border border-2 border-dark p-2"
+      style="background-color: var(--bs-brutal-light); min-height: 0;">
+      @if (repaymentSchedule().entries.length) {
+      <div class="d-flex flex-column gap-2">
+        @for (entry of repaymentSchedule().entries; track entry.installmentNumber) {
+        <div class="d-flex justify-content-between align-items-center border border-2 border-dark p-2"
+          [appRepaymentInstallmentStatus]="entry.isPaid">
+          <div>
+            <div class="fw-bold">Installment {{ entry.installmentNumber }}</div>
+            <div class="small text-dark">{{ entry.dueDate | date:'mediumDate' }}</div>
+          </div>
+
+          <div class="text-end d-flex flex-column align-items-end gap-2">
+            <div class="fw-bold">{{ entry.amount | currency:'USD':'symbol':'1.0-0' }}</div>
+            <div class="small fw-bold" [class.text-success]="entry.isPaid" [class.text-dark]="!entry.isPaid">
+              {{ entry.isPaid ? 'Paid' : 'Outstanding' }}
+            </div>
+            @if (!entry.isPaid) {
+            <button type="button" class="btn btn-primary btn-sm border border-2 border-dark rounded-0 px-3 py-1"
+              (click)="payInstallment(entry.installmentNumber)">
+              Pay
+            </button>
+            }
+          </div>
+        </div>
+        }
+      </div>
+      } @else {
+      <div class="d-flex align-items-center justify-content-center h-100 text-dark small">
+        No repayment installments available.
+      </div>
+      }
+    </div>
+  </div>
+</div>

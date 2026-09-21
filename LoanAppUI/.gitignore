@@ -1,0 +1,7 @@
+loanappui.client/node_modules
+loanappui.client/dist
+loanappui.client/obj
+LoanAppUI.Server/bin
+LoanAppUI.Server/obj
+.vs
+.vscode

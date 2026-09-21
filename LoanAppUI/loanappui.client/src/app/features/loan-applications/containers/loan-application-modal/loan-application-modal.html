@@ -1,0 +1,76 @@
+@if (isOpen()) {
+<div class="modal fade show d-block bg-dark bg-opacity-50" tabindex="-1" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header p-3">
+                <h4 class="modal-title">Create loan application</h4>
+            </div>
+
+            <div class="modal-body p-3">
+                <form [formGroup]="loanApplicationForm" (ngSubmit)="onSubmit()">
+                    @if (submissionAttempted && loanApplicationForm.invalid) {
+                    <div class="alert alert-warning border-2 border-dark rounded-0 mb-3 p-2">
+                        Please fix the highlighted fields and try again.
+                    </div>
+                    }
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Applicant name</label>
+                            <input type="text" class="form-control" [appInvalidField]="isFieldInvalid('applicantName')"
+                                formControlName="applicantName" placeholder="e.g. Jane Doe" />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" [appInvalidField]="isFieldInvalid('email')"
+                                formControlName="email" placeholder="name@example.com" />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Annual income</label>
+                            <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('annualIncome')"
+                                formControlName="annualIncome" placeholder="75000" />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Existing monthly debt</label>
+                            <input type="number" class="form-control"
+                                [appInvalidField]="isFieldInvalid('existingMonthlyDebt')"
+                                formControlName="existingMonthlyDebt" placeholder="500" />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Credit score</label>
+                            <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('creditScore')"
+                                formControlName="creditScore" placeholder="720" />
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Loan amount</label>
+                            <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('loanAmount')"
+                                formControlName="loanAmount" placeholder="15000" />
+                        </div>
+
+                        <div class="col-12">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <label class="form-label mb-0">Term (months)</label>
+                                @if (isFieldInvalid('termMonths')) {
+                                <div class="text-danger small">{{ getFieldErrorMessage('termMonths') }}</div>
+                                }
+                            </div>
+                            <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('termMonths')"
+                                formControlName="termMonths" placeholder="36" />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer border-0 p-3 pt-3 px-0 pb-0">
+                        <button type="button" class="btn btn-light" (click)="onClose()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "loanapp.client\\loanapp.client.esproj",
+        "Action": "Start",
+        "DebugTarget": "localhost (Chrome)"
+      },
+      {
+        "Path": "LoanApp.Server\\LoanApp.API\\LoanApp.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "LoanApp.Server\\LoanApp.Application\\LoanApp.Application.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "LoanApp.Server\\LoanApp.Domain\\LoanApp.Domain.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "LoanApp.Server\\LoanApp.Infrastructure\\LoanApp.Infrastructure.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
