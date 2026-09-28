@@ -1,7 +1,7 @@
 import { Component, inject, output } from '@angular/core';
 import { LoanApplication } from '../../types/models/loan-application';
 import { LoanStatus } from '../../types/enums/loan-status.enum';
-import { LoanApplicationStore } from '../../stores/loan-application-store';
+import { LoanApplicationStore } from '../../services/loan-application-store';
 
 @Component({
     imports: [],

@@ -1,19 +1,12 @@
 :host {
     display: block;
-    height: 100%;
+    min-height: 0;
 }
 
-.auto-resizing {
-    font-size: clamp(0.7rem, 2vw, 0.8rem);
+.app-type-table {
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
 }
 
-.section-heading {
-    font-size: clamp(0.95rem, 3vw, 1.25rem);
-    line-height: 1.2;
-}
-
-.table-responsive th,
-.table-responsive td,
-.table-responsive .badge {
-    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+.app-type-chip {
+    font-size: clamp(0.65rem, 1.5vw, 0.8rem);
 }

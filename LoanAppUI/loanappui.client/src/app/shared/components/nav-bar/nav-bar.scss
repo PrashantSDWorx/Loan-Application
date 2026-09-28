@@ -1,3 +1,19 @@
-.auto-resizing {
+:host {
+    display: block;
+}
+
+.app-type-nav {
     font-size: clamp(0.7rem, 2vw, 0.8rem);
+}
+
+.navbar {
+    background-color: var(--app-surface);
+    border-bottom: 3px solid var(--app-border);
+    min-height: 4.25rem;
+}
+
+.btn {
+    border: 2px solid var(--app-border) !important;
+    border-radius: 0 !important;
+    box-shadow: 2px 2px 0 var(--app-border);
 }

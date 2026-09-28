@@ -1,0 +1,71 @@
+:root {
+    --bs-brutal-primary: #FF6B6B;
+    --bs-brutal-secondary: #4ECDC4;
+    --bs-brutal-success: #95E1D3;
+    --bs-brutal-warning: #FCE38A;
+    --bs-brutal-danger: #F38181;
+    --bs-brutal-info: #AA96DA;
+    --bs-brutal-light: #FFF9E3;
+    --bs-brutal-dark: #2C2C2C;
+    --bs-brutal-black: #000000;
+    --bs-brutal-white: #FFFFFF;
+
+    --app-accent: var(--bs-brutal-success);
+    --app-accent-contrast: var(--bs-brutal-black);
+
+    --app-color-primary: var(--bs-brutal-primary);
+    --app-color-secondary: var(--bs-brutal-secondary);
+    --app-color-success: var(--bs-brutal-success);
+    --app-color-warning: var(--bs-brutal-warning);
+    --app-color-danger: var(--bs-brutal-danger);
+    --app-color-info: var(--bs-brutal-info);
+    --app-color-light: var(--bs-brutal-light);
+    --app-color-dark: var(--bs-brutal-dark);
+    --app-color-black: var(--bs-brutal-black);
+    --app-color-white: var(--bs-brutal-white);
+
+    --app-bg: var(--bs-brutal-light);
+    --app-surface: var(--bs-brutal-white);
+    --app-surface-alt: var(--bs-brutal-light);
+    --app-surface-muted: #f5f3ef;
+    --app-table-header: #f7f1e8;
+    --app-table-row: #fffdf8;
+    --app-border: var(--bs-brutal-black);
+    --app-text: var(--bs-brutal-dark);
+    --app-text-soft: rgba(44, 44, 44, 0.72);
+
+    --app-shadow: 6px 6px 0 var(--bs-brutal-black);
+    --app-shadow-sm: 2px 2px 0 var(--bs-brutal-black);
+    --app-border-size: 3px;
+    --app-border-radius: 0;
+    --app-section-gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+[data-theme='dark'] {
+    --bs-brutal-primary: #ff7a5c;
+    --bs-brutal-secondary: #67d0c7;
+    --bs-brutal-success: #9adab0;
+    --bs-brutal-warning: #f0d36b;
+    --bs-brutal-danger: #ff8e8e;
+    --bs-brutal-info: #9d93ff;
+    --bs-brutal-light: #111920;
+    --bs-brutal-dark: #f5efe6;
+    --bs-brutal-black: #f5efe6;
+    --bs-brutal-white: #18252d;
+
+    --app-accent: #ff7a5c;
+    --app-accent-contrast: #111920;
+
+    --app-bg: #0d1519;
+    --app-surface: #18252d;
+    --app-surface-alt: #1f303b;
+    --app-surface-muted: #243a45;
+    --app-table-header: #1f303b;
+    --app-table-row: #132027;
+    --app-border: #f5efe6;
+    --app-text: #f5efe6;
+    --app-text-soft: rgba(245, 239, 230, 0.72);
+
+    --app-shadow: 6px 6px 0 #f5efe6;
+    --app-shadow-sm: 2px 2px 0 #f5efe6;
+}

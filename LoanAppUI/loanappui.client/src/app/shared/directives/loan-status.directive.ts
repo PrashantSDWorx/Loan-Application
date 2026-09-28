@@ -5,7 +5,7 @@ import { LoanStatus } from '../../features/loan-applications/types/enums/loan-st
   selector: '[appLoanStatus]',
   host: {
     '[style.background]': 'backgroundColor()',
-    '[style.color]': "'var(--bs-brutal-black)'",
+    '[style.color]': "'var(--app-accent-contrast)'",
   },
 })
 export class LoanStatusDirective {

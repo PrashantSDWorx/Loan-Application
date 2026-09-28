@@ -1,13 +1,31 @@
+.app-type-logo {
+    font-size: clamp(0.8rem, 4vw, 1.6rem);
+}
+
 .logo {
     display: flex;
     column-gap: 0.6rem;
+    align-items: end;
     cursor: pointer;
 }
 
-.logo h2 {
-    font-size: clamp(1rem, 8vw, 2rem);
+.logo h3 {
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+    font-size: inherit;
 }
 
 .logo>.left {
     width: fit-content;
+    background-color: var(--bs-brutal-primary);
+    color: var(--bs-brutal-black);
+    border: 3px solid var(--bs-brutal-black);
+    box-shadow: 3px 3px 0 var(--bs-brutal-black);
+    padding: 0.1rem 0.6rem;
+}
+
+.logo>.right {
+    color: var(--bs-brutal-black);
 }

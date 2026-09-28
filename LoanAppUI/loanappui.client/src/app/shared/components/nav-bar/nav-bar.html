@@ -1,16 +1,20 @@
 <header class="navbar align-items-center d-flex">
-    <app-logo />
-    <div>
-        <button class="btn btn-outline-primary col-auto ms-2 me-1">
-            <div class="fw-semibold text-dark auto-resizing">
-                <span class="">Dark </span>
-                <i class="bi bi-moon-fill "></i>
+    <app-logo (click)="navigateHome()" />
+    <div class="p-0 d-flex">
+        <button type="button" class="btn btn-outline-primary ms-2 me-1" (click)="toggleTheme()"
+            [attr.aria-pressed]="isDarkMode() === 'dark'">
+            <div class="fw-semibold app-type-nav text-uppercase">
+                <span>{{ isDarkMode() === 'dark' ? 'Light' : 'Dark' }}</span>
+                <i [class.bi-moon-fill]="isDarkMode() !== 'dark'" [class.bi-sun-fill]="isDarkMode() === 'dark'"
+                    class="ms-1"></i>
             </div>
         </button>
-        <button class="btn btn-outline-primary me-4 col-auto ms-1 me-1">
-            <div class="fw-semibold text-dark auto-resizing">
-                <span class=""> Settings </span>
-                <i class="bi bi-gear-fill"></i>
+        <button (click)="navigateSettings()" class="btn me-2 me-sm-4 ms-1"
+            [class.btn-primary]="currentPage() == Page.Settings"
+            [class.btn-outline-primary]="currentPage() != Page.Settings">
+            <div class="fw-semibold app-type-nav text-uppercase">
+                <span>Settings</span>
+                <i class="bi bi-gear-fill ms-1"></i>
             </div>
         </button>
     </div>

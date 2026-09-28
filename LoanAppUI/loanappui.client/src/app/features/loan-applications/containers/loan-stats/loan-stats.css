@@ -1,8 +1,0 @@
-.auto-resizing {
-    font-size: clamp(0.7rem, 2vw, 0.8rem);
-}
-
-.section-heading {
-    font-size: clamp(0.95rem, 3vw, 1.25rem);
-    line-height: 1.2;
-}

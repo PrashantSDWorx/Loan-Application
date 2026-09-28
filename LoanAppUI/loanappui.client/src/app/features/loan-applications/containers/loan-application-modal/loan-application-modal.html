@@ -27,26 +27,26 @@
                                 formControlName="email" placeholder="name@example.com" />
                         </div>
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-6">
                             <label class="form-label">Annual income</label>
                             <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('annualIncome')"
                                 formControlName="annualIncome" placeholder="75000" />
                         </div>
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-6">
                             <label class="form-label">Existing monthly debt</label>
                             <input type="number" class="form-control"
                                 [appInvalidField]="isFieldInvalid('existingMonthlyDebt')"
                                 formControlName="existingMonthlyDebt" placeholder="500" />
                         </div>
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-6 col-md-6">
                             <label class="form-label">Credit score</label>
                             <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('creditScore')"
                                 formControlName="creditScore" placeholder="720" />
                         </div>
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-6 col-md-6">
                             <label class="form-label">Loan amount</label>
                             <input type="number" class="form-control" [appInvalidField]="isFieldInvalid('loanAmount')"
                                 formControlName="loanAmount" placeholder="15000" />
@@ -65,8 +65,15 @@
                     </div>
 
                     <div class="modal-footer border-0 p-3 pt-3 px-0 pb-0">
-                        <button type="button" class="btn btn-light" (click)="onClose()">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Save application</button>
+                        <button type="button" class="btn btn-light" (click)="onClose()">
+                            <span class="app-type-button">
+                                Cancel
+                            </span>
+                        </button>
+                        <button type="submit" class="btn btn-primary app-type-button">
+                            <span class="app-type-button">
+                                Save application
+                            </span></button>
                     </div>
                 </form>
             </div>

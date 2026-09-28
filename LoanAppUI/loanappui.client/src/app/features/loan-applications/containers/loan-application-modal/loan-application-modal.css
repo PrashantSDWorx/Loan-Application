@@ -23,3 +23,7 @@
 .modal-footer {
     border-color: var(--bs-brutal-black) !important;
 }
+
+.modal-title {
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+}

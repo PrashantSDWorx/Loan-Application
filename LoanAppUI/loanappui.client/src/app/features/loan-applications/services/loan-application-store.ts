@@ -7,6 +7,7 @@ import { LoanApplication } from "../types/models/loan-application";
 import { LoanApplicationService } from "../services/loan-application.service";
 import { CreateLoanApplicationRequest } from "../types/models/create-loan-application-request";
 import { LoanStatistics } from "../types/models/loan-statistics";
+import { LoanStatus } from "../types/enums/loan-status.enum";
 
 type LoanApplicationCollectionState = {
     loanApplications: LoanApplication[];
@@ -32,6 +33,23 @@ export const LoanApplicationStore = signalStore(
     withComputed(({ loanApplications, selectedLoanId }) => ({
         selectedLoanApplication: computed(() =>
             loanApplications().find(application => application.id === selectedLoanId()) ?? null
+        )
+    })),
+    withComputed(({ loanApplications }) => ({
+        approvedLoanApplications: computed(() =>
+            loanApplications().filter(
+                application => application.status === LoanStatus.Approved
+            )
+        ),
+        pendingLoanApplications: computed(() =>
+            loanApplications().filter(
+                application => application.status === LoanStatus.Pending
+            )
+        ),
+        rejectedLoanApplications: computed(() =>
+            loanApplications().filter(
+                application => application.status === LoanStatus.Rejected
+            )
         )
     })),
     withMethods((store, service = inject(LoanApplicationService)) => ({

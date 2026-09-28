@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./variables";
 @import "./brutestrap.css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -8,10 +8,149 @@ body {
     margin: 0;
 }
 
+:root {
+    color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+    color-scheme: dark;
+}
+
+body {
+    background: radial-gradient(circle at top, rgba(255, 122, 92, 0.12), transparent 34%), var(--app-bg);
+    color: var(--app-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-shell {
+    background-color: var(--app-bg);
+    color: var(--app-text);
+}
+
+.card,
+.table,
+.table-responsive,
+.form-control,
+.form-select,
+.modal-content,
+.modal-header,
+.modal-body,
+.modal-footer,
+.alert,
+.dropdown-menu {
+    background-color: var(--app-surface) !important;
+    color: var(--app-text) !important;
+    border-color: var(--app-border) !important;
+}
+
+.card,
+.modal-content,
+.alert,
+.form-control,
+.form-select {
+    box-shadow: var(--app-shadow) !important;
+}
+
+.table {
+    --bs-table-bg: var(--app-table-row);
+    --bs-table-color: var(--app-text);
+    --bs-table-striped-color: var(--app-text);
+    --bs-table-hover-color: var(--app-text);
+    --bs-table-border-color: var(--app-border);
+    --bs-table-accent-bg: transparent;
+}
+
+.table thead th {
+    background-color: var(--app-table-header) !important;
+    color: var(--app-text) !important;
+}
+
+.table tbody tr,
+.table tbody td,
+.table tbody tr td {
+    background-color: var(--app-table-row) !important;
+    color: var(--app-text) !important;
+}
+
 .min-h-0 {
     min-height: 0 !important;
 }
 
-.font-resizing {
-    font-size: clamp(0.7rem, 1.5vw, 1.25rem);
+:root[data-theme='dark'] .card,
+:root[data-theme='dark'] .card *:not(.btn):not(.badge),
+:root[data-theme='dark'] .app-surface-card,
+:root[data-theme='dark'] .app-surface-card *:not(.btn):not(.badge) {
+    color: var(--app-text) !important;
+}
+
+.text-dark {
+    color: var(--app-text) !important;
+}
+
+.text-muted,
+.text-secondary,
+.text-body-secondary {
+    color: var(--app-text-soft) !important;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+    background-color: transparent !important;
+    color: var(--app-text) !important;
+    border-color: var(--app-border) !important;
+    box-shadow: 2px 2px 0 var(--app-border) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+    background-color: var(--app-accent) !important;
+    color: var(--app-accent-contrast) !important;
+}
+
+.btn-light {
+    background-color: var(--app-surface-alt) !important;
+    color: var(--app-text) !important;
+}
+
+.btn-primary {
+    box-shadow: 4px 4px 0 var(--app-border) !important;
+}
+
+.app-surface-card,
+.app-surface-card .card-body,
+.app-surface-card .card-header {
+    background-color: var(--app-surface) !important;
+    color: var(--app-text) !important;
+}
+
+.logo>.left {
+    background-color: var(--app-accent) !important;
+    color: var(--app-accent-contrast) !important;
+    border: 3px solid var(--app-border) !important;
+    box-shadow: 3px 3px 0 var(--app-border) !important;
+}
+
+.logo>.right {
+    color: var(--app-text) !important;
+}
+
+.app-type-button {
+    font-size: clamp(0.65rem, 1.5vw, 1rem);
+}
+
+.app-type-card {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.app-type-panel-heading {
+    font-size: clamp(0.95rem, 3vw, 1.25rem);
+    line-height: 1.2;
+}
+
+.app-type-section-heading {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+}
+
+.app-type-section-subheading {
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
 }

@@ -21,7 +21,7 @@ export class ToastService {
         const id = this.nextId++;
         this.toasts.update((current) => [...current, { id, message, type }]);
 
-        setTimeout(() => this.dismiss(id), 5000);
+        setTimeout(() => this.dismiss(id), 2000);
     }
 
     dismiss(id: number): void {

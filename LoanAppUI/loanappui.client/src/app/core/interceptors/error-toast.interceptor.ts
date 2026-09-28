@@ -28,6 +28,6 @@ function getHttpErrorMessage(error: HttpErrorResponse): string {
             ? error.error
             : error.error?.message;
 
-    return serverMessage ?? error.statusText ?? `Request failed (${error.status})`;
+    return serverMessage ?? error.status ?? `Request failed (${error.status})`;
 }
 

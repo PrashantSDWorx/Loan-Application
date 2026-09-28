@@ -1,0 +1,22 @@
+:host {
+    display: block;
+    align-self: flex-start;
+}
+
+.loan-status-chart {
+    position: relative;
+    width: min(100%, 140px);
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.status-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    flex: 0 0 0.75rem;
+    border: 2px solid #000;
+}
+
+.app-type-stats {
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+}

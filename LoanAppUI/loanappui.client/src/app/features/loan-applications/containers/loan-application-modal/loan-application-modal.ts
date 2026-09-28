@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { InvalidFormFieldDirective } from '../../../../shared/directives/invalid-form-field.directive';
 import { CreateLoanApplicationRequest } from '../../types/models/create-loan-application-request';
-import { LoanApplicationStore } from '../../stores/loan-application-store';
+import { LoanApplicationStore } from '../../services/loan-application-store';
 
 function multipleOf12Validator(control: AbstractControl<number | null>): ValidationErrors | null {
   const value = control.value;
